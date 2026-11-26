@@ -285,19 +285,20 @@ a, button {
 
 .hero-main-logo {
   width: 100%;
-  max-width: 260px;
+  max-width: 215px;
   height: auto;
   display: block;
-  background: var(--white);
-  padding: 0.65rem 0.75rem;
-  border-radius: 14px;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(212, 175, 55, 0.45);
+  background: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.55));
 }
 
 @media (min-width: 820px) {
   .hero-main-logo {
-    max-width: 300px;
+    max-width: 260px;
   }
 }
 
@@ -320,6 +321,8 @@ a, button {
 
 .hero-sports {
   margin: 0;
+  padding-left: 1rem;
+  border-left: 4px solid #C5A03F;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -368,6 +371,58 @@ a, button {
 .hero .btn--outline-dark:hover {
   background: rgba(255, 255, 255, 0.18);
   border-color: var(--white);
+}
+
+.hero-pillars {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 0;
+}
+
+@media (min-width: 720px) {
+  .hero-pillars {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+}
+
+.hero-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 0.65rem;
+  padding: 0.25rem 0.75rem;
+  color: #E2B94B;
+  position: relative;
+}
+
+.hero-pillar span {
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+@media (min-width: 720px) {
+  .hero-pillar + .hero-pillar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.28);
+  }
 }
 
 .btn {
