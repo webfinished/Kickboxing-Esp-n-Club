@@ -41,6 +41,9 @@ const galleryVideo = document.getElementById('club-gallery-video');
 if (carousel && track) {
   const slides = Array.from(track.children);
   const totalSlides = slides.length;
+  const videoSlideIndex = galleryVideo
+    ? slides.findIndex((slide) => slide.contains(galleryVideo))
+    : -1;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let currentIndex = 0;
   let isPaused = prefersReduced;
@@ -68,12 +71,16 @@ if (carousel && track) {
     track.style.transform = `translate3d(-${pct}%, 0, 0)`;
   }
 
+  function isOnVideoSlide() {
+    return galleryVideo && videoSlideIndex >= 0 && currentIndex === videoSlideIndex;
+  }
+
   function scheduleNext() {
     clearSlideTimer();
     if (isPaused || isHovered) return;
 
-    // Si el vídeo está en la primera posición, permanece ahí hasta que acabe
-    if (currentIndex === 0 && galleryVideo) {
+    // Cuando el vídeo está activo, permanece ahí hasta que acabe
+    if (isOnVideoSlide()) {
       const playPromise = galleryVideo.play();
       if (playPromise && typeof playPromise.catch === 'function') {
         playPromise.catch(() => {
@@ -90,7 +97,7 @@ if (carousel && track) {
 
   function syncVideoForSlide(resetToStart = false) {
     if (!galleryVideo) return;
-    if (currentIndex === 0) {
+    if (isOnVideoSlide()) {
       if (resetToStart) {
         try {
           galleryVideo.currentTime = 0;
@@ -139,25 +146,23 @@ if (carousel && track) {
 
   if (galleryVideo) {
     galleryVideo.addEventListener('ended', () => {
-      if (currentIndex === 0 && !isPaused && !isHovered) {
+      if (isOnVideoSlide() && !isPaused && !isHovered) {
         stepForward();
       }
     });
   }
 
-  // Iniciar en el vídeo (índice 0) junto a la foto de las niñas (índice 1)
   currentIndex = 0;
   applyPosition(true);
   updateToggleUI();
   syncVideoForSlide(true);
   scheduleNext();
 
-  // Al entrar la galería en pantalla, asegurar que el vídeo arranque desde el inicio si está en posición 0
   if (galleryVideo && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && currentIndex === 0 && !isPaused && !isHovered) {
+          if (entry.isIntersecting && isOnVideoSlide() && !isPaused && !isHovered) {
             if (galleryVideo.paused) {
               galleryVideo.play().catch(() => {});
             }
@@ -198,7 +203,7 @@ if (carousel && track) {
   carousel.addEventListener('mouseenter', () => {
     isHovered = true;
     clearSlideTimer();
-    if (galleryVideo && currentIndex === 0) galleryVideo.pause();
+    if (galleryVideo && isOnVideoSlide()) galleryVideo.pause();
   });
 
   carousel.addEventListener('mouseleave', () => {
