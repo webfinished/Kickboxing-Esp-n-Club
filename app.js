@@ -30,19 +30,21 @@ if (navToggle && mainNav) {
   });
 }
 
-// Carrusel alternado (estática <-> combate) pasando de izquierda a derecha cada 1.5 segundos
+// Galería: vídeo primero (permanece hasta terminar) y fotos cada 3 s con desplazamiento lateral suave
 const carousel = document.getElementById('club-carousel');
 const track = document.getElementById('ltr-track');
 const prevBtn = document.getElementById('slider-prev');
 const nextBtn = document.getElementById('slider-next');
 const toggleBtn = document.getElementById('slider-toggle');
+const galleryVideo = document.getElementById('club-gallery-video');
 
 if (carousel && track) {
   const slides = Array.from(track.children);
   const totalSlides = slides.length;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let currentIndex = totalSlides - 1;
+  let currentIndex = 0;
   let isPaused = prefersReduced;
+  let isHovered = false;
   let timer = null;
 
   function visibleCount() {
@@ -53,43 +55,77 @@ if (carousel && track) {
     return Math.max(0, totalSlides - visibleCount());
   }
 
+  function clearSlideTimer() {
+    if (timer) {
+      window.clearTimeout(timer);
+      timer = null;
+    }
+  }
+
   function applyPosition(instant = false) {
     const pct = (currentIndex * 100) / visibleCount();
     track.style.transition = instant ? 'none' : '';
     track.style.transform = `translate3d(-${pct}%, 0, 0)`;
   }
 
-  // Avanza de izquierda a derecha (decrementando el desplazamiento negativo para que las fotos entren desde la izquierda hacia la derecha)
-  function stepLeftToRight() {
-    if (currentIndex <= 0) {
-      currentIndex = maxIndex();
-    } else {
-      currentIndex -= 1;
+  function scheduleNext() {
+    clearSlideTimer();
+    if (isPaused || isHovered) return;
+
+    // Si el vídeo está en la primera posición, permanece ahí hasta que acabe
+    if (currentIndex === 0 && galleryVideo) {
+      const playPromise = galleryVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // Respaldo si el navegador bloquea la reproducción automática
+          timer = window.setTimeout(stepForward, 3000);
+        });
+      }
+      return;
     }
-    applyPosition();
+
+    // Resto de fotos: avanzan cada 3 segundos
+    timer = window.setTimeout(stepForward, 3000);
   }
 
-  function stepNext() {
+  function syncVideoForSlide(resetToStart = false) {
+    if (!galleryVideo) return;
+    if (currentIndex === 0) {
+      if (resetToStart) {
+        try {
+          galleryVideo.currentTime = 0;
+        } catch {
+          // Ignorar si aún no cargaron metadatos
+        }
+      }
+      if (!isPaused && !isHovered) {
+        galleryVideo.play().catch(() => {});
+      }
+    } else {
+      galleryVideo.pause();
+    }
+  }
+
+  function stepForward() {
     if (currentIndex >= maxIndex()) {
       currentIndex = 0;
     } else {
       currentIndex += 1;
     }
     applyPosition();
+    syncVideoForSlide(true);
+    scheduleNext();
   }
 
-  function startAuto() {
-    stopAuto();
-    if (!isPaused) {
-      timer = window.setInterval(stepLeftToRight, 3000);
+  function stepBack() {
+    if (currentIndex <= 0) {
+      currentIndex = maxIndex();
+    } else {
+      currentIndex -= 1;
     }
-  }
-
-  function stopAuto() {
-    if (timer) {
-      window.clearInterval(timer);
-      timer = null;
-    }
+    applyPosition();
+    syncVideoForSlide(true);
+    scheduleNext();
   }
 
   function updateToggleUI() {
@@ -101,22 +137,47 @@ if (carousel && track) {
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
   }
 
-  currentIndex = maxIndex();
+  if (galleryVideo) {
+    galleryVideo.addEventListener('ended', () => {
+      if (currentIndex === 0 && !isPaused && !isHovered) {
+        stepForward();
+      }
+    });
+  }
+
+  // Iniciar en el vídeo (índice 0) junto a la foto de las niñas (índice 1)
+  currentIndex = 0;
   applyPosition(true);
   updateToggleUI();
-  startAuto();
+  syncVideoForSlide(true);
+  scheduleNext();
+
+  // Al entrar la galería en pantalla, asegurar que el vídeo arranque desde el inicio si está en posición 0
+  if (galleryVideo && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && currentIndex === 0 && !isPaused && !isHovered) {
+            if (galleryVideo.paused) {
+              galleryVideo.play().catch(() => {});
+            }
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(carousel);
+  }
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      stepLeftToRight();
-      startAuto();
+      stepBack();
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      stepNext();
-      startAuto();
+      stepForward();
     });
   }
 
@@ -124,12 +185,29 @@ if (carousel && track) {
     toggleBtn.addEventListener('click', () => {
       isPaused = !isPaused;
       updateToggleUI();
-      startAuto();
+      if (isPaused) {
+        clearSlideTimer();
+        if (galleryVideo) galleryVideo.pause();
+      } else {
+        syncVideoForSlide(false);
+        scheduleNext();
+      }
     });
   }
 
-  carousel.addEventListener('mouseenter', stopAuto);
-  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('mouseenter', () => {
+    isHovered = true;
+    clearSlideTimer();
+    if (galleryVideo && currentIndex === 0) galleryVideo.pause();
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isHovered = false;
+    if (!isPaused) {
+      syncVideoForSlide(false);
+      scheduleNext();
+    }
+  });
 
   window.addEventListener('resize', () => {
     if (currentIndex > maxIndex()) {
