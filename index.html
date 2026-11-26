@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Kickboxing Espín Club en Molina de Segura, Murcia. Clases de Kickboxing, Muay Thai y Boxeo para todos los niveles. Club federado FKRM y FEKM.">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>Kickboxing Espín Club — Molina de Segura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a href="#contenido-principal" class="skip-link">Ir al contenido principal</a>
+
+  <!-- Barra superior limpia estilo Kickboxing Madrid con iconos en sus colores originales -->
+  <div class="top-utility">
+    <div class="container utility-inner">
+      <div class="social-icon-bar" aria-label="Contacto y redes sociales">
+        <!-- Instagram (gradiente oficial) -->
+        <a href="https://www.instagram.com/espinclub_kickboxing/" target="_blank" rel="noopener noreferrer"
+          class="brand-icon brand-icon--ig" aria-label="Abrir Instagram @espinclub_kickboxing"
+          title="Instagram @espinclub_kickboxing">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+          </svg>
+        </a>
+
+        <!-- Gmail (colores oficiales sobre blanco) -->
+        <a href="mailto:espin30.123@gmail.com" class="brand-icon brand-icon--gmail"
+          aria-label="Enviar correo a espin30.123@gmail.com" title="Correo: espin30.123@gmail.com">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M2 6.5V18a2 2 0 0 0 2 2h2.5v-8.8L2 7.8Z" />
+            <path fill="#34A853" d="M22 6.5V18a2 2 0 0 1-2 2h-2.5v-8.8L22 7.8Z" />
+            <path fill="#FBBC05" d="M17.5 11.2 22 7.8V6a2 2 0 0 0-3.2-1.6L17.5 5.4Z" />
+            <path fill="#EA4335" d="M6.5 11.2 12 15.3l5.5-4.1V5.4L12 9.5 6.5 5.4Z" />
+            <path fill="#C5221F" d="M2 6v1.8l4.5 3.4V5.4L5.2 4.4A2 2 0 0 0 2 6Z" />
+          </svg>
+        </a>
+
+        <!-- WhatsApp (verde oficial #25D366) -->
+        <a href="https://wa.me/34667565243?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20club%20de%20kickboxing"
+          target="_blank" rel="noopener noreferrer" class="brand-icon brand-icon--wa"
+          aria-label="Abrir WhatsApp: 667 56 52 43" title="WhatsApp: 667 56 52 43">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true">
+            <path
+              d="M12.04 2a9.9 9.9 0 0 0-8.52 14.95L2.5 21.5l4.68-1.22A9.9 9.9 0 1 0 12.04 2Zm5.78 13.97c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.18.11-1.9-.12a17.4 17.4 0 0 1-1.72-.63c-3.03-1.31-5-4.38-5.15-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.48.78-2.21 1.05-2.51.28-.3.6-.38.8-.38h.58c.19 0 .44-.07.69.53.25.6.86 2.09.94 2.24.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.3.31-.13.61.18.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.12.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.75.82 2.05.97.3.15.5.22.58.35.07.12.07.72-.17 1.4Z" />
+          </svg>
+        </a>
+      </div>
+
+      <a href="https://wa.me/34667565243?text=Hola%2C%20quiero%20probar%20una%20clase%20en%20Kickboxing%20Esp%C3%ADn."
+        target="_blank" rel="noopener noreferrer" class="top-trial-btn">
+        Prueba una clase
+      </a>
+    </div>
+  </div>
+
+  <!-- Navegación limpia sin logo duplicado -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand-wordmark">
+        <strong translate="no">KICKBOXING ESPÍN</strong>
+        <span>Molina de Segura</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"
+        aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#disciplinas" class="nav-link">Disciplinas</a>
+        <a href="#galeria-club" class="nav-link">Galería</a>
+        <a href="#competicion" class="nav-link">Club FKRM</a>
+        <a href="#horarios" class="nav-link">Horarios</a>
+        <a href="#ubicacion" class="nav-link">Dónde estamos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <!-- Hero claro y limpio con logotipo único en primera plana -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-logo-stage">
+          <img src="assets/logo-espin.jpg" alt="Logotipo oficial de Kick Boxing Espín Club" class="hero-main-logo"
+            width="770" height="1024" fetchpriority="high">
+        </div>
+
+        <div class="hero-copy">
+          <p class="hero-kicker">Club federado FKRM · Federación Española de Kickboxing y Muaythai (FEKM)</p>
+
+          <h1 class="hero-sports" aria-label="Kickboxing, Muay Thai y Boxeo">
+            <span class="sport-line">Kickboxing</span>
+            <span class="sport-line">Muay Thai</span>
+            <span class="sport-line">Boxeo</span>
+          </h1>
+
+          <p class="hero-lead">
+            Clases para adultos e infantil desde cero y equipo de competición bajo la dirección de Espín.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/34667565243?text=Hola%2C%20quiero%20reservar%20una%20clase%20de%20prueba%20en%20Kickboxing%20Esp%C3%ADn."
+              target="_blank" rel="noopener noreferrer" class="btn btn--black">
+              Reserva tu clase de prueba
+            </a>
+            <a href="#horarios" class="btn btn--outline-dark">
+              Ver horarios y ubicación
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Disciplinas en bloques limpios -->
+    <section id="disciplinas" class="section section--gray">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Disciplinas del club</h2>
+        </div>
+
+        <div class="disciplines-grid">
+          <article class="discipline-card">
+            <figure class="card-media">
+              <img src="assets/lucha-5.jpg" alt="Combate de kickboxing en torneo con patada alta" width="931"
+                height="952" loading="lazy">
+            </figure>
+            <div class="card-body">
+              <h3>Kickboxing</h3>
+              <p>Técnica de puño y pierna, coordinación y preparación en tatami y ring.</p>
+            </div>
+          </article>
+
+          <article class="discipline-card">
+            <figure class="card-media">
+              <img src="assets/pad-work.jpg" alt="Entrenamiento de Muay Thai con paos y golpeo de rodilla" width="6483"
+                height="4322" loading="lazy">
+            </figure>
+            <div class="card-body">
+              <h3>Muay Thai</h3>
+              <p>Trabajo técnico con paos, piernas y rodillas para potencia y resistencia.</p>
+            </div>
+          </article>
+
+          <article class="discipline-card">
+            <figure class="card-media">
+              <img src="assets/bag-training.jpg" alt="Entrenamiento de boxeo en saco pesado" width="4256" height="2832"
+                loading="lazy">
+            </figure>
+            <div class="card-body">
+              <h3>Boxeo</h3>
+              <p>Guardia, desplazamientos, manoplas y trabajo de saco para todos los niveles.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería alternada (estática <-> combate) pasando de izquierda a derecha cada 3 segundos -->
+    <section id="galeria-club" class="section section--dark">
+      <div class="container">
+        <div class="gallery-header">
+          <div class="section-head section-head--gold">
+            <h2 class="section-title section-title--light">El club y el combate</h2>
+          </div>
+
+          <div class="slider-controls">
+            <button type="button" id="slider-prev" class="slider-btn" aria-label="Foto anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button type="button" id="slider-toggle" class="slider-btn" aria-label="Pausar carrusel"
+              aria-pressed="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+            </button>
+            <button type="button" id="slider-next" class="slider-btn" aria-label="Foto siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="ltr-carousel" id="club-carousel" aria-roledescription="carrusel"
+          aria-label="Imágenes del club y combates">
+          <div class="ltr-track" id="ltr-track">
+            <figure class="ltr-slide">
+              <img src="assets/club-grupo-medallas.jpg" alt="Equipo de Kickboxing Espín con medallas en el gimnasio"
+                width="1024" height="768">
+              <figcaption>Equipo Espín Club con medallas</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/lucha-1.jpg" alt="Luchadora de Espín Club conectando un golpe en campeonato" width="931"
+                height="952">
+              <figcaption>Combate en campeonato oficial</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/club-equipo-tatami.jpg" alt="Grupo completo infantil y adulto en el tatami del club"
+                width="1024" height="768">
+              <figcaption>Grupo infantil y adulto en tatami</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/lucha-2.jpg" alt="Competidor de Kickboxing Espín lanzando directo de derecha" width="931"
+                height="952">
+              <figcaption>Competidor de Espín Club en acción</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/club-saludo-clase.jpg" alt="Clase realizando el saludo tradicional en el tatami"
+                width="1024" height="768">
+              <figcaption>Saludo y respeto en clase</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/lucha-3.jpg" alt="Competidora de Espín Club en torneo oficial FEKM" width="931"
+                height="952">
+              <figcaption>Torneo oficial FEKM</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/club-cantera-medallas.jpg" alt="Cantera del club mostrando sus medallas junto a Espín"
+                width="1024" height="768">
+              <figcaption>Cantera y medallistas del club</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/lucha-4.jpg" alt="Luchador de Espín Club realizando patada media en combate" width="931"
+                height="952">
+              <figcaption>Técnica de pierna en competición</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/club-instalaciones.jpg" alt="Instalaciones de Kickboxing Espín con tatami y sacos"
+                width="1024" height="768">
+              <figcaption>Instalaciones y zona de sacos</figcaption>
+            </figure>
+            <figure class="ltr-slide">
+              <img src="assets/lucha-5.jpg"
+                alt="Patada alta de competidor de Espín Club bajo la mirada de su entrenador" width="931" height="952">
+              <figcaption>Espín dirigiendo desde la esquina</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por qué elegir Kickboxing Espín -->
+    <section id="competicion" class="section section--white">
+      <div class="container club-feature">
+        <figure class="club-photo">
+          <img src="assets/club-cantera-medallas.jpg" alt="Cantera y entrenadores de Kickboxing Espín con medallas"
+            width="1024" height="768" loading="lazy">
+        </figure>
+
+        <div class="club-copy">
+          <h2 class="section-title">¿Por qué entrenar en Espín Club?</h2>
+          <p class="club-lead">
+            Club inscrito en la <strong>Federación de Kickboxing de la Región de Murcia (FKRM)</strong> y en la
+            <strong>Federación Española de Kickboxing y Muaythai (FEKM)</strong>, dirigido por Espín en Molina de
+            Segura.
+          </p>
+
+          <ul class="club-bullets">
+            <li>
+              <strong>Iniciación desde cero</strong>
+              <span>Grupos adaptados aunque nunca hayas entrenado antes.</span>
+            </li>
+            <li>
+              <strong>Ambiente cercano y valores</strong>
+              <span>Respeto, compañerismo y disciplina en cada sesión.</span>
+            </li>
+            <li>
+              <strong>Cantera y competición</strong>
+              <span>Medallistas en campeonatos autonómicos y nacionales.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horarios y contacto -->
+    <section id="horarios" class="section section--gray">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Horarios y contacto</h2>
+        </div>
+
+        <div class="schedule-layout">
+          <div class="schedule-card">
+            <h3>Horario orientativo</h3>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Lunes, miércoles y viernes</th>
+                  <td>17:00 – 21:00</td>
+                </tr>
+                <tr class="is-closed">
+                  <th scope="row">Martes, jueves y fin de semana</th>
+                  <td>Consultar por WhatsApp</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="address-block">
+              <strong>Av. de Valencia, 33</strong>, 30500 Molina de Segura, Murcia
+            </p>
+            <div class="contact-icons-row">
+              <a href="https://wa.me/34667565243?text=Hola%2C%20quiero%20consultar%20horarios%20y%20probar%20una%20clase%20en%20Kickboxing%20Esp%C3%ADn."
+                target="_blank" rel="noopener noreferrer" class="contact-chip" aria-label="WhatsApp: 667 56 52 43">
+                <span class="brand-icon brand-icon--wa" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path
+                      d="M12.04 2a9.9 9.9 0 0 0-8.52 14.95L2.5 21.5l4.68-1.22A9.9 9.9 0 1 0 12.04 2Zm5.78 13.97c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.18.11-1.9-.12a17.4 17.4 0 0 1-1.72-.63c-3.03-1.31-5-4.38-5.15-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.48.78-2.21 1.05-2.51.28-.3.6-.38.8-.38h.58c.19 0 .44-.07.69.53.25.6.86 2.09.94 2.24.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.3.31-.13.61.18.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.12.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.75.82 2.05.97.3.15.5.22.58.35.07.12.07.72-.17 1.4Z" />
+                  </svg>
+                </span>
+                <span>667 56 52 43</span>
+              </a>
+
+              <a href="https://www.instagram.com/espinclub_kickboxing/" target="_blank" rel="noopener noreferrer"
+                class="contact-chip" aria-label="Instagram @espinclub_kickboxing">
+                <span class="brand-icon brand-icon--ig" aria-hidden="true">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </span>
+                <span>Instagram</span>
+              </a>
+
+              <a href="mailto:espin30.123@gmail.com" class="contact-chip" aria-label="Correo: espin30.123@gmail.com">
+                <span class="brand-icon brand-icon--gmail" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M2 6.5V18a2 2 0 0 0 2 2h2.5v-8.8L2 7.8Z" />
+                    <path fill="#34A853" d="M22 6.5V18a2 2 0 0 1-2 2h-2.5v-8.8L22 7.8Z" />
+                    <path fill="#FBBC05" d="M17.5 11.2 22 7.8V6a2 2 0 0 0-3.2-1.6L17.5 5.4Z" />
+                    <path fill="#EA4335" d="M6.5 11.2 12 15.3l5.5-4.1V5.4L12 9.5 6.5 5.4Z" />
+                    <path fill="#C5221F" d="M2 6v1.8l4.5 3.4V5.4L5.2 4.4A2 2 0 0 0 2 6Z" />
+                  </svg>
+                </span>
+                <span>espin30.123@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+          <figure class="schedule-photo">
+            <img src="assets/club-instalaciones.jpg" alt="Tatami y sacos de entrenamiento en Kickboxing Espín"
+              width="1024" height="768" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reseñas de Google pasando abajo (de más completa a menos texto) -->
+    <section id="opiniones" class="reviews-marquee-section" aria-labelledby="reviews-heading">
+      <div class="container reviews-top">
+        <div class="reviews-badge">
+          <span class="google-g-badge" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#4285F4"
+                d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+              <path fill="#34A853"
+                d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+              <path fill="#FBBC05"
+                d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+              <path fill="#EA4335"
+                d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+            </svg>
+          </span>
+          <div class="stars-row" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <h2 id="reviews-heading">Reseñas en Google (5,0 / 5)</h2>
+        </div>
+      </div>
+
+      <div class="marquee-viewport">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <blockquote class="ticker-card">
+              <p>«Una de las cosas que se debe destacar en este club es el buen ambiente que se respira en él. La otra,
+                y no menos importante, es el gran esfuerzo que hacen los competidores para poder alcanzar su sueño. Todo
+                ello de la mano de su entrenador Espín, un gran profesional. Es un club joven pero que en muy poco
+                tiempo ha conseguido grandes éxitos y su respeto en el tatami.»</p>
+              <footer>C. V. · Reseña en Google</footer>
+            </blockquote>
+            <blockquote class="ticker-card">
+              <p>«Un lugar idóneo para crecer en lo deportivo y en lo personal. Bien dirigido, el Kickboxing trabaja
+                valores como el compañerismo, la solidaridad y el respeto y eso Espín sabe muy bien cómo hacerlo. Gran
+                profesional y mejor persona. Orgullosa de poder ver crecer este gran club y de acompañar a sus miembros
+                en los diferentes eventos deportivos.»</p>
+              <footer>R. M. · Reseña en Google</footer>
+            </blockquote>
+            <blockquote class="ticker-card">
+              <p>«Buenas instalaciones, excelente calidad en la explicación de técnicas y lo más importante, un gran
+                compañerismo. Es un Club de Kick Boxing con un enorme potencial.»</p>
+              <footer>P. · Reseña en Google</footer>
+            </blockquote>
+          </div>
+
+          <div class="marquee-group" aria-hidden="true">
+            <blockquote class="ticker-card">
+              <p>«Una de las cosas que se debe destacar en este club es el buen ambiente que se respira en él. La otra,
+                y no menos importante, es el gran esfuerzo que hacen los competidores para poder alcanzar su sueño. Todo
+                ello de la mano de su entrenador Espín, un gran profesional. Es un club joven pero que en muy poco
+                tiempo ha conseguido grandes éxitos y su respeto en el tatami.»</p>
+              <footer>C. V. · Reseña en Google</footer>
+            </blockquote>
+            <blockquote class="ticker-card">
+              <p>«Un lugar idóneo para crecer en lo deportivo y en lo personal. Bien dirigido, el Kickboxing trabaja
+                valores como el compañerismo, la solidaridad y el respeto y eso Espín sabe muy bien cómo hacerlo. Gran
+                profesional y mejor persona. Orgullosa de poder ver crecer este gran club y de acompañar a sus miembros
+                en los diferentes eventos deportivos.»</p>
+              <footer>R. M. · Reseña en Google</footer>
+            </blockquote>
+            <blockquote class="ticker-card">
+              <p>«Buenas instalaciones, excelente calidad en la explicación de técnicas y lo más importante, un gran
+                compañerismo. Es un Club de Kick Boxing con un enorme potencial.»</p>
+              <footer>P. · Reseña en Google</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa de Google Maps abajo del todo -->
+    <section id="ubicacion" class="map-section" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="map-header">
+          <div>
+            <h2 id="map-heading" class="section-title">Dónde estamos</h2>
+            <p class="map-address">Kickboxing Espín · Av. de Valencia, 33, 30500 Molina de Segura, Murcia</p>
+          </div>
+          <a href="https://maps.google.com/?q=Kickboxing+Espin+Avenida+de+Valencia+33+30500+Molina+de+Segura+Murcia"
+            target="_blank" rel="noopener noreferrer" class="btn btn--black">
+            Abrir en Google Maps
+          </a>
+        </div>
+
+        <div class="map-frame-wrap">
+          <iframe title="Mapa de ubicación de Kickboxing Espín en Molina de Segura"
+            src="https://maps.google.com/maps?q=Kickboxing%20Espin,%20Av.%20de%20Valencia%2033,%2030500%20Molina%20de%20Segura,%20Murcia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong translate="no">Kickboxing Espín Club</strong>
+        <p>Av. de Valencia, 33, 30500 Molina de Segura, Murcia</p>
+      </div>
+      <div class="social-icon-bar" aria-label="Redes y contacto en pie de página">
+        <a href="https://www.instagram.com/espinclub_kickboxing/" target="_blank" rel="noopener noreferrer"
+          class="brand-icon brand-icon--ig" aria-label="Instagram @espinclub_kickboxing">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+          </svg>
+        </a>
+        <a href="mailto:espin30.123@gmail.com" class="brand-icon brand-icon--gmail" aria-label="Correo electrónico">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M2 6.5V18a2 2 0 0 0 2 2h2.5v-8.8L2 7.8Z" />
+            <path fill="#34A853" d="M22 6.5V18a2 2 0 0 1-2 2h-2.5v-8.8L22 7.8Z" />
+            <path fill="#FBBC05" d="M17.5 11.2 22 7.8V6a2 2 0 0 0-3.2-1.6L17.5 5.4Z" />
+            <path fill="#EA4335" d="M6.5 11.2 12 15.3l5.5-4.1V5.4L12 9.5 6.5 5.4Z" />
+            <path fill="#C5221F" d="M2 6v1.8l4.5 3.4V5.4L5.2 4.4A2 2 0 0 0 2 6Z" />
+          </svg>
+        </a>
+        <a href="https://wa.me/34667565243?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20el%20club%20de%20kickboxing"
+          target="_blank" rel="noopener noreferrer" class="brand-icon brand-icon--wa" aria-label="WhatsApp">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true">
+            <path
+              d="M12.04 2a9.9 9.9 0 0 0-8.52 14.95L2.5 21.5l4.68-1.22A9.9 9.9 0 1 0 12.04 2Zm5.78 13.97c-.24.68-1.42 1.3-1.97 1.38-.52.08-1.18.11-1.9-.12a17.4 17.4 0 0 1-1.72-.63c-3.03-1.31-5-4.38-5.15-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.48.78-2.21 1.05-2.51.28-.3.6-.38.8-.38h.58c.19 0 .44-.07.69.53.25.6.86 2.09.94 2.24.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.3.31-.13.61.18.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.12.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.75.82 2.05.97.3.15.5.22.58.35.07.12.07.72-.17 1.4Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
