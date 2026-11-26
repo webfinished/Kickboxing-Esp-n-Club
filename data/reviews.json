@@ -1,0 +1,22 @@
+{
+  "rating": 4.8,
+  "userRatingCount": null,
+  "updatedAt": "2026-11-26T13:10:00Z",
+  "reviews": [
+    {
+      "author": "C. V.",
+      "rating": 5,
+      "text": "Una de las cosas que se debe destacar en este club es el buen ambiente que se respira en él. La otra, y no menos importante, es el gran esfuerzo que hacen los competidores para poder alcanzar su sueño. Todo ello de la mano de su entrenador Espín, un gran profesional. Es un club joven pero que en muy poco tiempo ha conseguido grandes éxitos y su respeto en el tatami."
+    },
+    {
+      "author": "R. M.",
+      "rating": 5,
+      "text": "Un lugar idóneo para crecer en lo deportivo y en lo personal. Bien dirigido, el Kickboxing trabaja valores como el compañerismo, la solidaridad y el respeto y eso Espín sabe muy bien cómo hacerlo. Gran profesional y mejor persona. Orgullosa de poder ver crecer este gran club y de acompañar a sus miembros en los diferentes eventos deportivos."
+    },
+    {
+      "author": "P.",
+      "rating": 5,
+      "text": "Buenas instalaciones, excelente calidad en la explicación de técnicas y lo más importante, un gran compañerismo. Es un Club de Kick Boxing con un enorme potencial."
+    }
+  ]
+}

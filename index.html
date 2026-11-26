@@ -266,16 +266,19 @@
     <section id="competicion" class="section section--white">
       <div class="container club-feature">
         <figure class="club-photo">
-          <img src="assets/club-cantera-medallas.jpg" alt="Cantera y entrenadores de Kickboxing Espín con medallas"
-            width="1024" height="768" loading="lazy">
+          <img src="assets/entrenador-espin.jpg" alt="Entrenador Espín en el ring con casco de competición"
+            width="1024" height="1024" loading="lazy">
         </figure>
 
         <div class="club-copy">
           <h2 class="section-title">¿Por qué entrenar en Espín Club?</h2>
           <p class="club-lead">
-            Club inscrito en la <strong>Federación de Kickboxing de la Región de Murcia (FKRM)</strong> y en la
-            <strong>Federación Española de Kickboxing y Muaythai (FEKM)</strong>, dirigido por Espín en Molina de
-            Segura.
+            Espín Club es un club de kickboxing, muay thai y boxeo dirigido por el entrenador Espín, profesional del
+            sector con amplia trayectoria en los deportes de contacto. El club se encuentra inscrito en la
+            <strong>Federación de Kickboxing de la Región de Murcia (FKRM)</strong> y en la
+            <strong>Federación Española de Kickboxing y Muaythai (FEKM)</strong>, lo que le otorga un respaldo
+            deportivo oficial. Su planteamiento está orientado tanto a quienes se inician en la práctica como a quienes
+            desean competir, orientado a todas las edades.
           </p>
 
           <ul class="club-bullets">
@@ -305,16 +308,16 @@
 
         <div class="schedule-layout">
           <div class="schedule-card">
-            <h3>Horario orientativo</h3>
+            <h3>Lunes, miércoles y viernes</h3>
             <table class="hours-table">
               <tbody>
                 <tr>
-                  <th scope="row">Lunes, miércoles y viernes</th>
-                  <td>17:00 – 21:00</td>
+                  <th scope="row">Niños</th>
+                  <td>17:30 – 18:30</td>
                 </tr>
-                <tr class="is-closed">
-                  <th scope="row">Martes, jueves y fin de semana</th>
-                  <td>Consultar por WhatsApp</td>
+                <tr>
+                  <th scope="row">Adultos</th>
+                  <td>19:00 – 20:30</td>
                 </tr>
               </tbody>
             </table>
@@ -385,7 +388,7 @@
                 d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
             </svg>
           </span>
-          <div class="stars-row" aria-hidden="true">
+          <div class="stars-row" id="reviews-stars" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -402,17 +405,23 @@
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <polygon
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="star-fill-48">
+                  <stop offset="80%" stop-color="currentColor" />
+                  <stop offset="80%" stop-color="#D4D4D8" />
+                </linearGradient>
+              </defs>
+              <polygon fill="url(#star-fill-48)"
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
-          <h2 id="reviews-heading">Reseñas en Google (5,0 / 5)</h2>
+          <h2 id="reviews-heading">Reseñas en Google (4,8 / 5)</h2>
         </div>
       </div>
 
       <div class="marquee-viewport">
-        <div class="marquee-track">
+        <div class="marquee-track" id="reviews-marquee-track">
           <div class="marquee-group">
             <blockquote class="ticker-card">
               <p>«Una de las cosas que se debe destacar en este club es el buen ambiente que se respira en él. La otra,
